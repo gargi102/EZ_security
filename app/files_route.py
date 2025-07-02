@@ -24,7 +24,7 @@ async def upload_file(file: UploadFile = File(...), role: str = Depends(get_curr
     if role != UserRole.OPS:
         raise HTTPException(status_code=403, detail="Only OPS users can upload files.")
 
-    allowed_extensions = ["pptx", "docx", "xlsx"]
+    allowed_extensions = ["pptx", "docx", "xlsx", "pdf"]
     filename = file.filename
     ext = filename.split(".")[-1].lower()
 
@@ -37,4 +37,4 @@ async def upload_file(file: UploadFile = File(...), role: str = Depends(get_curr
         content = await file.read()
         f.write(content)
 
-    return {"message": "✅ File uploaded successfully.", "filename": filename}
+    return {"message": "File uploaded successfully.", "filename": filename}

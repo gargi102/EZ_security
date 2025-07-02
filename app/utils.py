@@ -4,11 +4,12 @@ import os
 from jose import jwt
 from datetime import datetime, timedelta
 
+print("✅ utils.py loaded")
+
 SECRET_KEY = os.environ.get("SECRET_KEY", "my-super-secret-key")  # Replace in prod
 
 serializer = URLSafeTimedSerializer(SECRET_KEY)
 
-# 🔐 JWT Settings
 JWT_SECRET = "your_jwt_secret_key"  # Replace with env var in real app
 JWT_ALGORITHM = "HS256"
 JWT_EXPIRATION_MINUTES = 30

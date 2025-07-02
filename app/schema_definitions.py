@@ -8,7 +8,7 @@ class UserRole(str, Enum):
     OPS = "OPS"
     CLIENT = "CLIENT"
     
-print("✅ schemas.py loaded")
+print("in schema file")
 
 # 🧾 Request model for user signup
 class UserSignup(BaseModel):
